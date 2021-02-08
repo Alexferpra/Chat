@@ -2,11 +2,17 @@
 	<head>
 		<title>Live Agent</title>
 
+		<script type="text/javascript">
+		   if (!window._laq) { window._laq = []; }
+		   window._laq.push(function(){liveagent.showWhenOnline('5735E00000000Yj', document.getElementById('liveagent_button_online_5735E00000000Yj'));
+		   liveagent.showWhenOffline('5735E00000000Yj', document.getElementById('liveagent_button_offline_5735E00000000Yj'));
+		   });
+		</script>
 		<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 		<script type='text/javascript'>
 		   var initESW = function(gslbBaseURL) {
 			embedded_svc.settings.displayHelpButton = true; //Or false
-			embedded_svc.settings.language = 'es'; //For example, enter 'en' or 'en-US'
+			embedded_svc.settings.language = 'es-ES'; //For example, enter 'en' or 'en-US'
 		   
 			embedded_svc.settings.defaultMinimizedText = 'Chatea con nosotros'; //(Defaults to Chat with an Expert)
 			embedded_svc.settings.disabledMinimizedText = 'No hay agentes'; //(Defaults to Agent Offline)
@@ -53,6 +59,7 @@
 			initESW('https://service.force.com');
 		   }
 		</script>		
+​
 		<style type='text/css'>
 		   .embeddedServiceHelpButton .helpButton .uiButton {
 		   background-color: #FF3975;
@@ -62,6 +69,7 @@
 		   outline: 1px solid #005290;
 		   }
 		</style>
+​
 	</head>
 	<body>
 		<br/><br/><br/>
@@ -70,7 +78,23 @@
 			<br/><br/><br/>
 			<h1 style="font-size: 26px;">Bienvenido a la p&aacute;gina de Soporte de SAVIA</h1>
 		</center>
+		
 		<br/><br/><br/>
+		<table align="center">
+			<tr>
+				<td>
+					<!--img id="liveagent_button_online_5735E00000000Yj" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('5735E00000000Yj')" src="https://cdn.icon-icons.com/icons2/259/PNG/128/ic_call_128_28145.png" /-->
+					<a id="liveagent_button_online_5735E00000000Yj" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('5735E00000000Yj')">
+					Online Chat Content
+					</a>
+					<!--img id="liveagent_button_offline_5735E00000000Yj" style="display: none;" src="https://cdn.icon-icons.com/icons2/317/PNG/128/phone-icon_34382.png" /-->
+					<div id="liveagent_button_offline_5735E00000000Yj" style="display: none;">
+					Offline Chat Content
+					</div>
+				</td>
+			</tr>
+		</table>
+		
 		<br/><br/><br/>
 		<center>
 			<h2 style="font-size: 14px;">Pulse sobre el icono para comenzar una conversaci&oacute;n con uno de nuestros agentes</h2>
