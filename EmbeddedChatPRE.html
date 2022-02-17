@@ -33,10 +33,10 @@
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 		embedded_svc.settings.extraPrechatFormDetails = [
-			/*{ label: 'Nombre', value: 'nomPrueba2', displayToAgent: false },
+			{ label: 'Nombre', value: 'nomPrueba2', displayToAgent: false, transcriptFields: ['FirstName__c'] },
 			{ label: 'Apellidos', value: 'apePrueba2', displayToAgent: false },
-			{ label: 'Correo electrónico', value: 'emailPrueba2@test.com', displayToAgent: false }*/
-			{ label: 'Nombre', transcriptFields: ['FirstName__c']}
+			{ label: 'Correo electrónico', value: 'emailPrueba2@test.com', displayToAgent: false }
+			//{ label: 'Nombre', transcriptFields: ['FirstName__c']}
 		      ];
 		/*embedded_svc.settings.extraPrechatFormDetails = [{
 		  "label":"Nombre",
