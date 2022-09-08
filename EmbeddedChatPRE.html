@@ -46,8 +46,8 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://mapfresaluddigital--preprod.my.salesforce.com',
-			'https://preprod-prechat.cs80.force.com/chatasistencia',
+			'https://mapfresaluddigital--preprod.sandbox.my.salesforce.com',
+			'https://mapfresaluddigital--preprod.sandbox.my.salesforce-sites.com/chatasistencia',
 			gslbBaseURL,
 			'00D250000000hUd',
 			'SaviaEmbeddedChatWindow',
@@ -64,7 +64,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://mapfresaluddigital--preprod.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://mapfresaluddigital--preprod.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
