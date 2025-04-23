@@ -1,0 +1,90 @@
+<html>
+   <head>
+      <title>Live Agent</title>
+      <!-- sacado de snippet de Embedded Service Deployment Settings-->
+      <style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #315AAF;
+		font-family: "Circular Std", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #315AAF;
+	}
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+	var initESW = function(gslbBaseURL) {
+		embedded_svc.settings.displayHelpButton = true; //Or false
+		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+		// Settings for Chat
+		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+			// Returns a valid button ID.
+		//};
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
+
+		embedded_svc.init(
+			'https://mapfresaluddigital.my.salesforce.com',
+			'https://mapfresaluddigital.my.salesforce-sites.com/chatasistencia',
+			gslbBaseURL,
+			'00D0N000001OLWj',
+			'SaviaEmbeddedChatWindow',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c2-am3.salesforceliveagent.com/content',
+				deploymentId: '5725p000000Tr6b',
+				buttonId: '5735p000000Tqt4',
+				baseLiveAgentURL: 'https://d.la1-c2-am3.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I5p000000CcttEAC_17719d4e834',
+				isOfflineSupportEnabled: false
+			}
+		);
+	};
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://mapfresaluddigital.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
+</script>
+   </head>
+   <body>
+		<br/><br/><br/>
+		<center>
+			<img id="logo" src="https://bopiweb.com/imagenes/6046/tomo.1.M-3746497-3.jpg" />
+			<br/><br/><br/>
+			<h1 style="font-size: 26px;">Bienvenido a la p&aacute;gina de Soporte de SAVIA</h1>
+		</center>
+
+		<br/><br/><br/>
+		<table align="center">
+			<tr>
+				<td>
+					<a id="liveagent_button_online_5735p000000Tqt4" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('5735p000000Tqt4')"><!-- Online Chat Content --></a><div id="liveagent_button_offline_5735p000000Tqt4" style="display: none;"><!-- Offline Chat Content --></div><script type="text/javascript">
+if (!window._laq) { window._laq = []; }
+window._laq.push(function(){liveagent.showWhenOnline('5735p000000Tqt4', document.getElementById('liveagent_button_online_5735p000000Tqt4'));
+liveagent.showWhenOffline('5735p000000Tqt4', document.getElementById('liveagent_button_offline_5735p000000Tqt4'));
+});</script>
+
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
